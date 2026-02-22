@@ -1,33 +1,28 @@
-Python 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
->>> 
-... # 1. Imports
-... 
-... import numpy as np
-... import matplotlib.pyplot as plt
-... import cv2
-... 
-... from tensorflow.keras.datasets import fashion_mnist
-... from sklearn.naive_bayes import GaussianNB
-... from sklearn.ensemble import RandomForestClassifier
-... from sklearn.metrics import accuracy_score, f1_score, ConfusionMatrixDisplay
-... 
-... 
-... # 2. Load Dataset
-... 
-... (X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
-... 
-... print("Train shape:", X_train.shape)
-... print("Test shape:", X_test.shape)
-... 
-... 
-... # 3. Image Normalization
-... 
-... X_train = X_train.astype('float32') / 255.0
-... X_test  = X_test.astype('float32') / 255.0
-... 
-... print("After normalization → Min:", X_train.min(), "Max:", X_train.max())
-... 
+
+# 1. Imports
+ 
+import numpy as np
+import matplotlib.pyplot as plt
+import cv2
+ 
+from tensorflow.keras.datasets import fashion_mnist
+from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, f1_score, ConfusionMatrixDisplay
+ 
+
+# 2. Load Dataset
+
+(X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
+
+print("Train shape:", X_train.shape)
+print("Test shape:", X_test.shape)
+ # 3. Image Normalization
+
+X_train = X_train.astype('float32') / 255.0
+X_test  = X_test.astype('float32') / 255.0
+
+print("After normalization → Min:", X_train.min(), "Max:", X_train.max())
 
 # 4. Histogram Feature Extraction
 
@@ -107,3 +102,4 @@ print(f"Random Forest → Accuracy: {acc_rf:.4f}, Macro F1: {f1_rf:.4f}")
 
 ConfusionMatrixDisplay.from_predictions(y_test, y_pred_rf)
 plt.title("Random Forest Confusion Matrix")
+
