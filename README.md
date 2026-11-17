@@ -37,11 +37,6 @@ Raw Images → Normalization → Feature Extraction → Feature Fusion → Train
 
 ---
 
-## How to Run
-
-Open the notebook in Google Colab and run all cells. All dependencies (`numpy`, `opencv-python`, `scikit-learn`, `matplotlib`, `tensorflow`) are pre-installed in Colab.
-
----
 
 ## Tech Stack
 
